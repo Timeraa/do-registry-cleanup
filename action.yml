@@ -1,5 +1,5 @@
 name: DigitalOcean Container Registry Tag Cleanup
-description: Cleanup old Docker tags from DigitalOcean container registry with options to keep recent versions, unique semver versions, and tags within a retention period.
+description: Cleanup old Docker tags from DigitalOcean registry, keeping recent versions, unique semver tags, and within retention period
 author: Timeraa
 branding:
   icon: droplet
