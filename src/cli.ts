@@ -34,6 +34,8 @@ program
   .option('--dry-run', 'Perform a dry run without actually deleting tags', false)
   .option('-i, --include-repos <patterns...>', 'Glob patterns to include specific repositories')
   .option('-e, --exclude-repos <patterns...>', 'Glob patterns to exclude specific repositories')
+  .option('--repo-concurrency <number>', 'Number of repositories to process concurrently', '3')
+  .option('--tag-concurrency <number>', 'Number of tags to delete concurrently per repository', '10')
   .parse(process.argv)
 
 const options = program.opts()
@@ -50,6 +52,8 @@ async function main() {
       options.excludeRepos || [],
       console.log,
       runCommand,
+      Number.parseInt(options.repoConcurrency, 10),
+      Number.parseInt(options.tagConcurrency, 10),
     )
   }
   catch (error) {

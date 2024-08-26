@@ -22,6 +22,9 @@ catch {
 
 async function main() {
   try {
+    const repoConcurrency = Number.parseInt(core.getInput('repo-concurrency') || '3', 10)
+    const tagConcurrency = Number.parseInt(core.getInput('tag-concurrency') || '10', 10)
+
     const result = await processRepositories(
       core.getInput('registry-name', { required: true }),
       Number.parseInt(core.getInput('keep-versions', { required: true }), 10),
@@ -32,6 +35,8 @@ async function main() {
       core.getMultilineInput('exclude-repos'),
       core.info,
       runCommand,
+      repoConcurrency,
+      tagConcurrency,
     )
 
     //* Add summary

@@ -30,6 +30,14 @@ inputs:
   exclude-repos:
     description: Glob patterns to exclude specific repositories (one per line)
     required: false
+  repo-concurrency:
+    description: Number of repositories to process concurrently
+    required: false
+    default: '3'
+  tag-concurrency:
+    description: Number of tags to delete concurrently per repository
+    required: false
+    default: '10'
 runs:
   using: node20
   main: dist/index.mjs
