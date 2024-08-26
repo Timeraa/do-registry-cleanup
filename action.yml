@@ -1,0 +1,31 @@
+name: Delete Old Docker Tags
+description: Delete old Docker tags from DigitalOcean container registry
+author: Timeraa
+branding:
+  icon: file-text
+  color: blue
+inputs:
+  registry-name:
+    description: Name of the DigitalOcean container registry
+    required: true
+  keep-versions:
+    description: Number of recent versions to keep
+    required: true
+    default: '5'
+  retention-days:
+    description: Number of days to retain tags regardless of keep-versions
+    required: false
+    default: '0'
+  dry-run:
+    description: Perform a dry run without actually deleting tags
+    required: false
+    default: 'false'
+  include-repos:
+    description: Glob patterns to include specific repositories (one per line)
+    required: false
+  exclude-repos:
+    description: Glob patterns to exclude specific repositories (one per line)
+    required: false
+runs:
+  using: node20
+  main: dist/index.mjs

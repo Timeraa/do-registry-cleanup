@@ -1,0 +1,31 @@
+{
+  "name": "delete-docker-tags",
+  "type": "module",
+  "version": "1.0.0",
+  "packageManager": "pnpm@9.1.1",
+  "engines": {
+    "node": "^20"
+  },
+  "scripts": {
+    "build": "unbuild",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "@actions/core": "^1.10.1",
+    "@antfu/eslint-config": "^2.27.1",
+    "@total-typescript/tsconfig": "^1.0.4",
+    "@types/minimatch": "^5.1.2",
+    "@types/node": "^22.5.0",
+    "@types/semver": "^7.5.8",
+    "@vitest/ui": "^2.0.5",
+    "eslint": "^9.9.0",
+    "minimatch": "^5.1.0",
+    "semver": "^7.6.3",
+    "typescript": "^5.5.4",
+    "unbuild": "^2.0.0",
+    "vitest": "^2.0.5"
+  }
+}
