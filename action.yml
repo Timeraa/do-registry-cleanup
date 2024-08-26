@@ -2,8 +2,8 @@ name: DigitalOcean Container Registry Tag Cleanup
 description: Cleanup old Docker tags from DigitalOcean registry, keeping recent versions, unique semver tags, and within retention period
 author: Timeraa
 branding:
-  icon: droplet
-  color: blue
+  icon: trash
+  color: red
 inputs:
   registry-name:
     description: Name of the DigitalOcean container registry
