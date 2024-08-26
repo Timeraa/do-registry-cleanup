@@ -44,16 +44,16 @@ async function main() {
   try {
     await processRepositories(
       options.registryName,
-      Number.parseInt(options.keepVersions, 5),
-      Number.parseInt(options.keepSemver, 0),
-      Number.parseInt(options.retentionDays, 0),
+      Number.parseInt(options.keepVersions, 10),
+      Number.parseInt(options.keepSemver, 10),
+      Number.parseInt(options.retentionDays, 10),
       options.dryRun,
       options.includeRepos || [],
       options.excludeRepos || [],
       console.log,
       runCommand,
-      Number.parseInt(options.repoConcurrency, 3),
-      Number.parseInt(options.tagConcurrency, 3),
+      Number.parseInt(options.repoConcurrency, 10),
+      Number.parseInt(options.tagConcurrency, 10),
     )
   }
   catch (error) {

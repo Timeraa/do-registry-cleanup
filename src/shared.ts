@@ -49,7 +49,7 @@ export async function processRepositories(
   logInfo: (message: string) => void,
   executeCommand: (cmd: string) => Promise<string>,
   repoConcurrency: number = 3,
-  tagConcurrency: number = 10,
+  tagConcurrency: number = 3,
 ): Promise<{ tagsDeletedSummary: { [key: string]: string[] }, totalTagsDeleted: number }> {
   const repos = JSON.parse(
     await runCommand(`doctl registry repository list-v2 ${registryName} -o json`),
