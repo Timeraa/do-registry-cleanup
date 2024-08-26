@@ -4,6 +4,9 @@
 [![License](https://img.shields.io/github/license/timeraa/do-registry-cleanup.svg)](https://github.com/timeraa/do-registry-cleanup/blob/main/LICENSE)
 [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/timeraa/do-registry-cleanup/ci.yml?branch=main)](https://github.com/timeraa/do-registry-cleanup/actions/workflows/ci.yml)
 
+> [!IMPORTANT]
+> Every tag deletion is a separate API call to DigitalOcean. This can hit your DigitalOcean account rate limit really fast if you have a lot of tags.
+
 This GitHub Action and CLI tool helps you clean up old Docker tags from your DigitalOcean container registry. It allows you to keep a specified number of recent versions, unique semver versions, and tags within a certain retention period.
 
 ## Features
