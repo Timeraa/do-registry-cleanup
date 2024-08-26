@@ -30,13 +30,17 @@ To use this action in your workflow, add the following step:
 - name: DigitalOcean Registry Cleanup
   uses: timeraa/do-registry-cleanup@v1
   with:
+    # Required
     registry-name: ${{ secrets.DIGITALOCEAN_REGISTRY_NAME }}
+    # Optional
     keep-versions: 3
     keep-semver: 2
     retention-days: 30
     dry-run: true
     include-repos: 'repo1, repo2'
     exclude-repos: 'repo3, repo4'
+    repo-concurrency: 3
+    tag-concurrency: 3
 ```
 
 ### CLI
