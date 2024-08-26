@@ -12,6 +12,10 @@ inputs:
     description: Number of recent versions to keep
     required: true
     default: '5'
+  keep-semver:
+    description: Number of unique semver versions to keep
+    required: false
+    default: '0'
   retention-days:
     description: Number of days to retain tags regardless of keep-versions
     required: false
