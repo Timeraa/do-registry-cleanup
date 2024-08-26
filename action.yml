@@ -1,5 +1,5 @@
-name: Delete Old Docker Tags
-description: Delete old Docker tags from DigitalOcean container registry
+name: DigitalOcean Container Registry Tag Cleanup
+description: Cleanup old Docker tags from DigitalOcean container registry
 author: Timeraa
 branding:
   icon: file-text
