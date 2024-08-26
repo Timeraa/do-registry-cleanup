@@ -22,8 +22,13 @@ This GitHub Action and CLI tool helps you clean up old Docker tags from your Dig
 
 To use this action in your workflow, add the following step:
 ```yaml
+- name: Setup DigitalOcean CLI
+  uses: digitalocean/action-doctl@v2
+  with:
+    token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+
 - name: DigitalOcean Registry Cleanup
-  uses: timeraa/do-registry-cleanup@v1.0.0
+  uses: timeraa/do-registry-cleanup@v1
   with:
     registry-name: ${{ secrets.DIGITALOCEAN_REGISTRY_NAME }}
     keep-versions: 3
