@@ -37,7 +37,7 @@ inputs:
   tag-concurrency:
     description: Number of tags to delete concurrently per repository
     required: false
-    default: '10'
+    default: '3'
 runs:
   using: node20
   main: dist/index.mjs

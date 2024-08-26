@@ -102,7 +102,7 @@ export async function processRepositories(
         }
         else {
           logInfo(`Deleting tag: ${repo.name}:${tag.tag}`)
-          await executeCommand(`doctl registry repository delete-tag ${repo.name} ${tag.tag} -f`)
+          await executeCommand(`doctl registry repository delete-tag ${registryName}/${repo.name} ${tag.tag} -f`)
         }
         tagsDeletedSummary[repo.name]!.push(tag.tag)
         totalTagsDeleted++

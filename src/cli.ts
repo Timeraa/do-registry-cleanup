@@ -35,7 +35,7 @@ program
   .option('-i, --include-repos <patterns...>', 'Glob patterns to include specific repositories')
   .option('-e, --exclude-repos <patterns...>', 'Glob patterns to exclude specific repositories')
   .option('--repo-concurrency <number>', 'Number of repositories to process concurrently', '3')
-  .option('--tag-concurrency <number>', 'Number of tags to delete concurrently per repository', '10')
+  .option('--tag-concurrency <number>', 'Number of tags to delete concurrently per repository', '3')
   .parse(process.argv)
 
 const options = program.opts()
@@ -44,16 +44,16 @@ async function main() {
   try {
     await processRepositories(
       options.registryName,
-      Number.parseInt(options.keepVersions, 10),
-      Number.parseInt(options.keepSemver, 10),
-      Number.parseInt(options.retentionDays, 10),
+      Number.parseInt(options.keepVersions, 5),
+      Number.parseInt(options.keepSemver, 0),
+      Number.parseInt(options.retentionDays, 0),
       options.dryRun,
       options.includeRepos || [],
       options.excludeRepos || [],
       console.log,
       runCommand,
-      Number.parseInt(options.repoConcurrency, 10),
-      Number.parseInt(options.tagConcurrency, 10),
+      Number.parseInt(options.repoConcurrency, 3),
+      Number.parseInt(options.tagConcurrency, 3),
     )
   }
   catch (error) {
