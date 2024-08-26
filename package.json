@@ -1,7 +1,7 @@
 {
   "name": "@timeraa/do-registry-cleanup",
   "type": "module",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "packageManager": "pnpm@9.8.0",
   "description": "A tool to clean up old Docker tags from DigitalOcean container registry",
   "author": "Timeraa",
