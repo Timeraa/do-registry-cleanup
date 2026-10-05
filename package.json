@@ -53,6 +53,6 @@
     "p-map": "^7.0.2",
     "semver": "^7.6.3",
     "typescript": "^5.5.4",
-    "unbuild": "^2.0.0"
+    "unbuild": "^3.0.0"
   }
 }
